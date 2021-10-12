@@ -1,0 +1,16 @@
+0:0:0:0:0:0:0:1 - - [12/Oct/2021:00:05:54 +0200] "GET /favicon.ico HTTP/1.1" 200 2130 http-bio-8080-exec-9 288
+0:0:0:0:0:0:0:1 - - [12/Oct/2021:00:05:55 +0200] "GET /favicon.ico HTTP/1.1" 200 2130 http-bio-8080-exec-9 3
+0:0:0:0:0:0:0:1 - - [12/Oct/2021:00:05:56 +0200] "GET /favicon.ico HTTP/1.1" 200 2130 http-bio-8080-exec-9 5
+0:0:0:0:0:0:0:1 - - [12/Oct/2021:00:05:56 +0200] "GET /home HTTP/1.1" 200 2130 http-bio-8080-exec-9 60
+0:0:0:0:0:0:0:1 - - [12/Oct/2021:00:05:57 +0200] "GET /favicon.ico HTTP/1.1" 200 2130 http-bio-8080-exec-9 4
+0:0:0:0:0:0:0:1 - - [12/Oct/2021:00:05:57 +0200] "GET /events HTTP/1.1" 200 189 http-bio-8080-exec-9 5
+0:0:0:0:0:0:0:1 - - [12/Oct/2021:00:05:57 +0200] "GET /favicon.ico HTTP/1.1" 200 2130 http-bio-8080-exec-9 3
+0:0:0:0:0:0:0:1 - - [12/Oct/2021:00:05:58 +0200] "GET /favicon.ico HTTP/1.1" 200 2130 http-bio-8080-exec-9 5
+0:0:0:0:0:0:0:1 - - [12/Oct/2021:00:05:59 +0200] "GET /about HTTP/1.1" 200 188 http-bio-8080-exec-9 6
+0:0:0:0:0:0:0:1 - - [12/Oct/2021:00:05:59 +0200] "GET /favicon.ico HTTP/1.1" 200 2130 http-bio-8080-exec-9 4
+0:0:0:0:0:0:0:1 - - [12/Oct/2021:00:06:00 +0200] "GET /favicon.ico HTTP/1.1" 200 2130 http-bio-8080-exec-9 3
+0:0:0:0:0:0:0:1 - - [12/Oct/2021:00:06:01 +0200] "GET /login HTTP/1.1" 200 496 http-bio-8080-exec-9 300
+0:0:0:0:0:0:0:1 - - [12/Oct/2021:00:06:01 +0200] "GET /favicon.ico HTTP/1.1" 200 2130 http-bio-8080-exec-9 4
+0:0:0:0:0:0:0:1 - - [12/Oct/2021:00:06:03 +0200] "GET /favicon.ico HTTP/1.1" 200 2130 http-bio-8080-exec-9 16
+0:0:0:0:0:0:0:1 - - [12/Oct/2021:00:06:03 +0200] "GET /favicon.ico HTTP/1.1" 200 2130 http-bio-8080-exec-9 2
+0:0:0:0:0:0:0:1 - - [12/Oct/2021:00:06:04 +0200] "GET /favicon.ico HTTP/1.1" 200 2130 http-bio-8080-exec-2 5
