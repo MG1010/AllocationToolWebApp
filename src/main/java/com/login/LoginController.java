@@ -9,7 +9,7 @@ public class LoginController {
 
 	
 		@RequestMapping(value = "/login", method = RequestMethod.GET)
-		public String showTodosList() {
+		public String showPage() {
 			return "login";
 		}
 }

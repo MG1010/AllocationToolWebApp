@@ -9,7 +9,7 @@ public class AboutController {
 
 	
 		@RequestMapping(value = "/about", method = RequestMethod.GET)
-		public String showTodosList() {
+		public String showPage() {
 			return "about";
 		}
 }
