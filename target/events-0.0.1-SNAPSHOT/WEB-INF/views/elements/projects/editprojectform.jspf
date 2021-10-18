@@ -1,0 +1,22 @@
+<form method="post">
+
+    <div>
+        <label for="ID">ID</label>
+        <input name="ID" id="ID" value="${project.id}">
+    </div>
+
+    <div>
+        <label for="name">Name</label>
+        <input name="name" id="name" value="${project.name}">
+    </div>
+
+    <div>
+        <label for="desc">Description</label>
+        <input name="desc" id="desc" value="${project.description}">
+    </div>
+
+    <div>
+        <input type="submit" value="Update">
+    </div>
+
+</form>

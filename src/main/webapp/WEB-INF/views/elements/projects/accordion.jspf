@@ -11,7 +11,10 @@
     </div>
     <div id="collapseTwo${project.name}" class="collapse" aria-labelledby="headingTwo${project.name}" data-parent="#accordion">
       <div class="card-body">
-        ${project.description}
+        ${project.description}<br>
+
+          <a class="btn btn-warning" href="editproject/${project.id}" role="button">Update</a>
+          <a class="btn btn-danger" href="deleteproject/${project.id}" role="button">Delete</a>
       </div>
     </div>
   </div>

@@ -5,13 +5,21 @@ import java.util.List;
 import com.team.TeamMember;
 
 public class Project {
-	
+
+	private Integer id;
 	private String name;
 	private String description;
 //	private Date startDate;
 //	private Date endDate;
 //	private List <TeamMember> teamMembers;
 
+
+	public Integer getId() {
+		return id;
+	}
+	public void setId(Integer id) {
+		this.id = id;
+	}
 	public String getName() {
 		return name;
 	}
@@ -26,6 +34,9 @@ public class Project {
 	}
 
 	public Project() {
+	}
+
+	public Project(String name, String description) {
 		this.name = name;
 		this.description = description;
 	}
