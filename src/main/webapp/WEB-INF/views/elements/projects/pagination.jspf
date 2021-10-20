@@ -1,0 +1,13 @@
+<nav aria-label="Pagination">
+    <ul class="pagination">
+        <li class="page-item"><a class="page-link" href="http://localhost:8080/projects/${pageId}">${pageId}</a></li>
+        <li class="page-item"><a class="page-link" href="http://localhost:8080/projects/${pageId+1}">${pageId+1}</a></li>
+        <li class="page-item"><a class="page-link" href="http://localhost:8080/projects/${pageId+2}">${pageId+2}</a></li>
+        <li class="page-item">
+            <a class="page-link" href="http://localhost:8080/projects/${pageId+1}" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+                <span class="sr-only">Next</span>
+            </a>
+        </li>
+    </ul>
+</nav>

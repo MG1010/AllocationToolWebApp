@@ -3,6 +3,8 @@
 
 <%@ include file="elements/projects/accordion.jspf"%>
 
-<a href="addproject" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Add Project</a>
+<%@ include file="elements/projects/addproject.jspf"%>
+
+<%@ include file="elements/projects/pagination.jspf"%>
 
 <%@ include file="elements/footer.jspf"%>
