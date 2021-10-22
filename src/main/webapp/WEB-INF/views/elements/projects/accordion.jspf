@@ -13,8 +13,8 @@
       <div class="card-body">
         ${project.description}<br>
 
-          <a class="btn btn-warning" href="editproject/${project.id}" role="button">Update</a>
-          <a class="btn btn-danger" href="deleteproject/${project.id}" role="button">Delete</a>
+          <a class="btn btn-warning" href="..\editproject/${project.id}" role="button">Update</a>
+          <a class="btn btn-danger" href="..\deleteproject/${project.id}" role="button">Delete</a>
       </div>
     </div>
   </div>

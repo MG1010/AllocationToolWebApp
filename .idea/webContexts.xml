@@ -5,6 +5,7 @@
       <map>
         <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/elements/projects/accordion.jspf" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/elements/projects" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/elements/projects/editprojectform.jspf" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/elements/projects" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/projects.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views" />
       </map>
     </option>
   </component>

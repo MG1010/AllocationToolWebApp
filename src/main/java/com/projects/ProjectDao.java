@@ -1,10 +1,17 @@
 package com.projects;
 
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.PreparedStatementCallback;
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 @Repository
@@ -12,6 +19,10 @@ public class ProjectDao {
 
     @Autowired
     JdbcTemplate jdbcTemplate;
+
+    @Autowired
+    NamedParameterJdbcTemplate namedParameterJdbcTemplate;
+
 
     //Find All Method
     public List<Project> findAll() {
@@ -31,21 +42,35 @@ public class ProjectDao {
     }*/
 
     //add Method
-    public int add(Project project) {
-        return jdbcTemplate.update("insert into projects (name, description) " + "values(?, ?)", project.getName(), project.getDescription());
+    void add(Project project) {
+
+        String SQLQuery = "insert into projects values (:id, :name, :description)";
+
+        Map<String, Object> map = new HashMap<String, Object>();
+        map.put("id", 4);
+        map.put("name", project.getName());
+        map.put("description", project.getDescription());
+
+        namedParameterJdbcTemplate.execute(SQLQuery, map, new PreparedStatementCallback() {
+            @Override
+            public Object doInPreparedStatement(PreparedStatement preparedStatement) throws SQLException, DataAccessException {
+                return preparedStatement.executeUpdate();
+            }
+        });
+
+//        jdbcTemplate.update("insert into projects (name, description) " + "values(?, ?)", project.getName(), project.getDescription());
+
     }
 
-    //Delete Method
-    public int Delete(int id) {
-        return jdbcTemplate.update("delete from projects where id=" + id);
+    //delete Method
+    void delete(int id) {
+        jdbcTemplate.update("delete from projects where id=" + id);
     }
 
     //Create Records Method
-    public void createRecords(final Integer Records) {
+    public void createRecords(final Integer NumberOfRowsToBeCreated) {
 
-        int NumberOfRowsToBeCreated = Records; //adjust
         final int NumberOfRowsInTable = jdbcTemplate.queryForObject("select count(*) from projects", Integer.class);
-
 
         if (NumberOfRowsToBeCreated > NumberOfRowsInTable) {
 

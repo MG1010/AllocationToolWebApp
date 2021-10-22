@@ -7,9 +7,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class AboutController {
 
-	
-		@RequestMapping(value = "/about", method = RequestMethod.GET)
-		public String showPage() {
-			return "about";
-		}
+    @RequestMapping(value = "/about", method = RequestMethod.GET)
+    public String showPage() {
+        return "about";
+    }
 }

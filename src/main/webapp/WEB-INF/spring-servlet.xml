@@ -46,6 +46,9 @@
         <property name="dataSource" ref="ds"></property>
     </bean>
 
+    <bean id="njt" class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate">
+        <constructor-arg type="javax.sql.DataSource" ref="ds"/>
+    </bean>
 
     <mvc:resources mapping="/webjars/**" location="/webjars/"/>
     

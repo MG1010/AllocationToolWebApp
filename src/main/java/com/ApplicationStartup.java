@@ -9,7 +9,6 @@ import javax.annotation.PostConstruct;
 @Component
 public class ApplicationStartup {
 
-
     @Autowired
     ProjectDao projectDao;
 
