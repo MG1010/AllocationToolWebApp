@@ -1,7 +1,13 @@
 package com.projects;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "projects")
 public class Project {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private String name;
     private String description;
@@ -38,13 +44,6 @@ public class Project {
     public Project(String name, String description) {
         this.name = name;
         this.description = description;
-    }
-
-    @Override
-    public String toString() {
-        return String.format(
-                "Project[name=%d, description='%s']",
-                name, description);
     }
 
 }

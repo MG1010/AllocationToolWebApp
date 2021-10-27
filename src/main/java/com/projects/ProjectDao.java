@@ -1,28 +1,17 @@
 package com.projects;
 
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.PreparedStatementCallback;
-import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 @Repository
 public class ProjectDao {
 
     @Autowired
     JdbcTemplate jdbcTemplate;
-
-    @Autowired
-    NamedParameterJdbcTemplate namedParameterJdbcTemplate;
-
 
     //Find All Method
     public List<Project> findAll() {
@@ -32,33 +21,20 @@ public class ProjectDao {
 
     //Find Projects By Page
     public List<Project> findProjectsByPage(int pageId, int total) {
-        return jdbcTemplate.query("select * from projects limit " + (pageId - 1) + "," + total, new BeanPropertyRowMapper<Project>(Project.class));
+        return jdbcTemplate.query("select * from projects limit " + (pageId - 1) + ","
+                + total, new BeanPropertyRowMapper<Project>(Project.class));
     }
 
-/*    //getProjectByID Method
-    public Project getProjectByID(Integer id) {
-        return jdbcTemplate.queryForObject("select * from projects where id=" + id, new Object[]{id},
-                new BeanPropertyRowMapper<Project>(Project.class));
-    }*/
+    //findByID - to change list into obj
+    public List<Project> findById(int Id) {
+        return jdbcTemplate.query("select * from projects where id= " + Id
+                , new BeanPropertyRowMapper<Project>(Project.class));
+    }
 
     //add Method
     void add(Project project) {
 
-        String SQLQuery = "insert into projects values (:id, :name, :description)";
-
-        Map<String, Object> map = new HashMap<String, Object>();
-        map.put("id", 4);
-        map.put("name", project.getName());
-        map.put("description", project.getDescription());
-
-        namedParameterJdbcTemplate.execute(SQLQuery, map, new PreparedStatementCallback() {
-            @Override
-            public Object doInPreparedStatement(PreparedStatement preparedStatement) throws SQLException, DataAccessException {
-                return preparedStatement.executeUpdate();
-            }
-        });
-
-//        jdbcTemplate.update("insert into projects (name, description) " + "values(?, ?)", project.getName(), project.getDescription());
+        jdbcTemplate.update("insert into projects (name, description) " + "values(?, ?)", project.getName(), project.getDescription());
 
     }
 
@@ -66,6 +42,7 @@ public class ProjectDao {
     void delete(int id) {
         jdbcTemplate.update("delete from projects where id=" + id);
     }
+
 
     //Create Records Method
     public void createRecords(final Integer NumberOfRowsToBeCreated) {
@@ -97,8 +74,4 @@ public class ProjectDao {
 
     }
 
-    //Update Method
-    /*    public int Update(Project project){
-        return jdbcTemplate.update("update projects where id="+id+"");
-    }*/
 }

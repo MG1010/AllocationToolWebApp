@@ -7,15 +7,15 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-    @Repository
-    public class TeamDao {
+@Repository
+public class TeamDao {
 
-        @Autowired
-        JdbcTemplate jdbcTemplate;
+    @Autowired
+    JdbcTemplate jdbcTemplate;
 
-        public List<TeamMember> findAll(){
-            return jdbcTemplate.query("select * from team",
-                    new BeanPropertyRowMapper<TeamMember>(TeamMember.class));
-        }
-
+    public List<TeamMember> findAll(){
+        return jdbcTemplate.query("select * from team",
+                new BeanPropertyRowMapper<TeamMember>(TeamMember.class));
     }
+
+}

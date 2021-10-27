@@ -3,9 +3,8 @@
   <component name="WebContextManager">
     <option name="state">
       <map>
-        <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/elements/projects/accordion.jspf" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/elements/projects" />
-        <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/elements/projects/editprojectform.jspf" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/elements/projects" />
-        <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/projects.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/test.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/views/elements/header.jspf" value="file://$PROJECT_DIR$/src/main/webapp/views/elements" />
       </map>
     </option>
   </component>
