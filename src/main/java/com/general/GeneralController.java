@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class GeneralController {
 
-	@GetMapping(value = "*")
-	public String showPage() {
-		return "home";
-	}
+    @GetMapping(value = "*")
+    public String showPage() {
+        return "home";
+    }
 }

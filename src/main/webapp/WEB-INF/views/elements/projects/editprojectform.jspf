@@ -1,11 +1,6 @@
 <form method="post">
 
     <div>
-        <label for="id">ID</label>
-        <input name="id" id="id" value="${project.id}">
-    </div>
-
-    <div>
         <label for="name">Name</label>
         <input name="name" id="name" value="${project.name}">
     </div>

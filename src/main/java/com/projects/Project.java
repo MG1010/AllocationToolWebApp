@@ -7,7 +7,7 @@ import javax.persistence.*;
 public class Project {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
     private String description;
@@ -38,10 +38,10 @@ public class Project {
     }
     //endregion
 
-    public Project() {
+    protected Project() {
     }
 
-    public Project(String name, String description) {
+    protected Project(String name, String description) {
         this.name = name;
         this.description = description;
     }

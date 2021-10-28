@@ -7,11 +7,11 @@ import org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration
 import org.springframework.context.annotation.ImportResource;
 
 @ImportResource("classpath:beans.xml")
-@SpringBootApplication (exclude = {DataSourceAutoConfiguration.class , JdbcTemplateAutoConfiguration.class} )
+@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class, JdbcTemplateAutoConfiguration.class})
 public class ProjectApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(ProjectApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(ProjectApplication.class, args);
+    }
 
 }
