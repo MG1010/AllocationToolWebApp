@@ -1,8 +1,7 @@
 package com.projects;
 
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -20,5 +19,9 @@ public class ProjectRestController {
         return repository.findAll();
     }
 
+    @PostMapping(value = "api/addproject")
+    public void addProject(@RequestBody Project project) {
+        repository.save(project);
+    }
 
 }
