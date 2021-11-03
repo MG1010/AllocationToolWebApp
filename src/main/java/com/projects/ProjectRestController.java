@@ -1,8 +1,13 @@
 package com.projects;
 
-
+import org.springframework.hateoas.Link;
+import org.springframework.hateoas.RepresentationModel;
+import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import java.net.URI;
 import java.util.List;
 
 @RestController
@@ -21,12 +26,36 @@ public class ProjectRestController {
 
     @GetMapping(value = "/api/projects/{id}")
     public Project retrieveProjectById(@PathVariable int id) {
-        return repository.findById(id);
+
+        //https://www.baeldung.com/spring-hateoas-tutorial
+
+        Project retrievedProject = repository.findById(id);
+
+        Link selfLink = WebMvcLinkBuilder
+                .linkTo(Project.class)
+                .slash(retrievedProject.getId())
+                .withSelfRel();
+
+        retrievedProject.add(selfLink);
+
+        return retrievedProject;
+
     }
 
-    @PostMapping(value = "/api/addproject")
-    public Project addProject(@RequestBody Project newProject) {
-        return repository.save(newProject);
+    @PostMapping(value = "/api/projects")
+    public ResponseEntity<Object> addProject(@RequestBody Project newProject) {
+        Project savedProject = repository.save(newProject);
+
+        //https://www.baeldung.com/spring-response-entity
+
+        URI location = ServletUriComponentsBuilder
+                .fromCurrentRequest()
+                .path("/{id}")
+                .buildAndExpand(savedProject.getId())
+                .toUri();
+
+        return ResponseEntity.created(location).build();
+
     }
 
     @PutMapping("/api/projects/{id}")
