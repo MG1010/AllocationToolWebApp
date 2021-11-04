@@ -1,5 +1,6 @@
-package com.projects;
+package com.dao;
 
+import com.domain.Project;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -32,14 +33,14 @@ public class ProjectDao {
     }
 
     //add Method
-    void add(Project project) {
+    public void add(Project project) {
 
         jdbcTemplate.update("insert into projects (name, description) " + "values(?, ?)", project.getName(), project.getDescription());
 
     }
 
     //delete Method
-    void delete(int id) {
+    public void delete(int id) {
         jdbcTemplate.update("delete from projects where id=" + id);
     }
 

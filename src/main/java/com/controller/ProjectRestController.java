@@ -1,8 +1,7 @@
-package com.projects;
+package com.controller;
 
-import org.springframework.hateoas.Link;
-import org.springframework.hateoas.RepresentationModel;
-import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder;
+import com.domain.Project;
+import com.repository.ProjectRepository;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -27,18 +26,17 @@ public class ProjectRestController {
     @GetMapping(value = "/api/projects/{id}")
     public Project retrieveProjectById(@PathVariable int id) {
 
-        //https://www.baeldung.com/spring-hateoas-tutorial
+//        //https://www.baeldung.com/spring-hateoas-tutorial
+//
+//        Project retrievedProject = repository.findById(id);
+//
+//        Link selfLink = linkTo(ProjectRestController.class)
+//                .slash(retrievedProject.getId())
+//                .withSelfRel();
+//
+//        retrievedProject.add(selfLink);
 
-        Project retrievedProject = repository.findById(id);
-
-        Link selfLink = WebMvcLinkBuilder
-                .linkTo(Project.class)
-                .slash(retrievedProject.getId())
-                .withSelfRel();
-
-        retrievedProject.add(selfLink);
-
-        return retrievedProject;
+        return repository.findById(id);
 
     }
 
