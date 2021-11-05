@@ -1,18 +1,20 @@
 package com.mapper;
 
 import com.domain.Project;
-import com.domain.ProjectDto;
+import com.domain.ProjectDTO;
+import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
-import org.mapstruct.factory.Mappers;
 
-@Mapper
+@Mapper(componentModel = "spring")
 public interface ProjectMapper {
 
-    ProjectMapper INSTANCE = Mappers.getMapper(ProjectMapper.class);
+    @Mapping(source = "projectid", target = "id")
+    @Mapping(source = "projectname", target = "name")
+    @Mapping(source = "projectdescription", target = "description")
 
-    @Mapping(source = "id", target = "id")
-    @Mapping(source = "name", target = "client")
-    @Mapping(source = "description", target = "note")
-    ProjectDto projectToProjectDto(Project project);
+    Project mapToProject(ProjectDTO projectDTO);
+
+    @InheritInverseConfiguration(name = "mapToProject")
+    ProjectDTO mapToProjectDTO (Project project);
 }
